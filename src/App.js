@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ProductList from './components/ProductList';
 
-function App() {
+// Wishlist button component
+const WishlistButton = () => {
+  const handleWishlistClick = () => {
+    window.location.href = "https://furrl.in/wishlist";
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button onClick={handleWishlistClick}>Wishlist</button>
+  );
+};
+
+// Cart button component
+const CartButton = () => {
+  const handleCartClick = () => {
+    window.location.href = "https://furrl.in/cart";
+  };
+
+  return (
+    <button onClick={handleCartClick}>Cart</button>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+      </Routes>
+      <WishlistButton />
+      <CartButton />
+    </Router>
   );
 }
 

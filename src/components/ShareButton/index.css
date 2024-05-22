@@ -1,0 +1,15 @@
+.share-button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  
+  .share-button:hover {
+    background-color: #e6376e;
+  }
+  
